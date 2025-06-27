@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Olympus</title>
+  <!-- plugins:css -->
+  <link rel="stylesheet" href="assets/vendors/mdi/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="assets/vendors/ti-icons/css/themify-icons.css">
+  <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
+  <link rel="stylesheet" href="assets/vendors/font-awesome/css/font-awesome.min.css">
+  <!-- endinject -->
+  <!-- Plugin css for this page -->
+  <link rel="stylesheet" href="assets/vendors/font-awesome/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.css">
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <!-- endinject -->
+  <!-- Layout styles -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- End layout styles -->
+  <link rel="shortcut icon" href="assets/images/favicon.png" />
+  <link href="https://cdn.materialdesignicons.com/6.5.95/css/materialdesignicons.min.css" rel="stylesheet">
+  <!-- Include Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+
+
+  <style>
+    .tab-button {
+      border-radius: 10px;
+      padding: 6px 16px;
+      font-weight: 500;
+    }
+
+    .tab-active {
+      background-color: #8f4de3;
+      color: white;
+      border: 2px solid #8f4de3;
+    }
+
+    .tab-inactive {
+      background-color: white;
+      color: #8f4de3;
+      border: 2px solid #8f4de3;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container-scroller">
+
+    <!-- partial:partials/_navbar.html -->
+    <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+      <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start">
+        <a class="navbar-brand brand-logo" href="index.html"><img src="assets/images/logo.svg" alt="logo" /></a>
+        <a class="navbar-brand brand-logo-mini" href="index.html"><img src="assets/images/logo-mini.svg"
+            alt="logo" /></a>
+      </div>
+      <div class="navbar-menu-wrapper d-flex align-items-stretch">
+        <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+          <span class="mdi mdi-menu"></span>
+        </button>
+
+        <ul class="navbar-nav navbar-nav-right">
+          <li class="nav-item nav-profile dropdown">
+
+          </li>
+          <li class="nav-item dropdown">
+            <!-- Additional dropdown -->
+          </li>
+
+          <li class="nav-item dropdown">
+            <!-- Additional dropdown -->
+          </li>
+
+          <li class="nav-item nav-logout d-none d-lg-block">
+            <!-- Logout link -->
+          </li>
+          <!-- ⛶ Fullscreen Button -->
+          <li class="nav-item d-none d-lg-block full-screen-link">
+            <a class="nav-link" href="#">
+              <i class="mdi mdi-fullscreen" id="fullscreen-button"></i>
+            </a>
+          </li>
+        </ul>
+        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button"
+          data-toggle="offcanvas">
+          <span class="mdi mdi-menu"></span>
+        </button>
+      </div>
+    </nav>
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      <!-- partial:partials/_sidebar.html -->
+      <nav class="sidebar sidebar-offcanvas" id="sidebar">
+        <ul class="nav">
+          <li class="nav-item nav-profile bg-dark">
+
+                          <!-- <a href="#" class="nav-link">
+               <div class="nav-profile-image"> 
+                 <img src="https://kavyainfoweb.com/wp-content/uploads/2025/05/Kavya-768x430.png" alt="profile" /> 
+                 <span class="login-status online"></span> 
+             </div>  
+                <div class="nav-profile-text d-flex flex-column" style="margin-right: -15px;">
+                     <span class="font-weight mb-2" style="color:white;font-size:15px;text-align:center">Kavya Infoweb Pvt Ltd</span>
+                </div>
+
+              </a> -->
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">
+              <span class="menu-title" style="color:#301934;font-weight:bold">Dashboard</span>
+              <i class="mdi mdi-home menu-icon" style="color:#301934"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false"
+              aria-controls="ui-basic">
+              <span class="menu-title" style="color:#301934;font-weight:bold">Membership Plans</span>
+              <i class="menu" style="color:#301934"></i>
+              <i class="mdi mdi-folder-key menu-icon" style="color:#301934"></i>
+            </a>
+
+            <div class="collapse" id="ui-basic">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item">
+                  <a class="nav-link" href="add_new.html" style="color:#301934">
+                    <i class="mdi mdi-plus-box me-2" style="color:#301934;font-weight:bold"></i> Add New
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="view_manage.html" style="color:#301934">
+                    <i class="mdi mdi-eye-settings me-2" style="color:#301934;font-weight:bold"></i> View and Manage
+                    Plans
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="addmember.html" aria-expanded="false" aria-controls="icons">
+              <span class="menu-title" style="color:#301934; font-weight:bold">Add Member</span>
+              <i class="mdi mdi-contacts menu-icon" style="color:#301934"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="managemember.html" aria-expanded="false" aria-controls="icons">
+              <span class="menu-title" style="color:#301934;font-weight:bold">Manage Member</span>
+              <i class="mdi mdi-account-group menu-icon" style="color:#301934"></i>
+            </a>
+           
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="reneval.html">
+              <span class="menu-title" style="color:#301934;font-weight:bold">Reneval</span>
+              <i class="mdi mdi-account-multiple-check menu-icon" style="color:#301934;"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="membership_report.html">
+              <span class="menu-title" style="color:#301934;font-weight:bold">Membership Report</span>
+              <i class="mdi mdi-account-multiple-check menu-icon" style="color:#301934;"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="revenue_report.html">
+              <span class="menu-title" style="color:#301934;font-weight:bold">Revenue Report</span>
+              <i class="mdi mdi-finance menu-icon" style="color:#301934;"></i>
+            </a>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link" href="settings.html">
+              <span class="menu-title" style="color:#301934;font-weight:bold">Settings</span>
+              <i class="mdi mdi-cog menu-icon" style="color:#301934;"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="logout.html">
+              <span class="menu-title" style="color:#301934;font-weight:bold">Logout</span>
+              <i class="mdi mdi-logout menu-icon" style="color:#301934;"></i>
+            </a>
+          </li>
+        </ul> 
+      </nav>
+      <!-- partial -->
+      <div class="main-panel">
+        <div class="content-wrapper">
+          <div class="page-header">
+            <h3 class="page-title">
+              <span class="page-title-icon bg-gradient-primary text-white me-2">
+                <i class="mdi mdi-home"></i>
+              </span> Dashboard
+            </h3>
+            <nav aria-label="breadcrumb">
+              <ul class="breadcrumb">
+                <li class="breadcrumb-item">
+                  <a href="index.html">Home</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">
+                  Dashboard
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div class="container">
+            <div class="row text-white" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+              <!-- Card Container Row -->
+              <div class="row">
+
+                <!-- CARD TEMPLATE START -->
+                <!-- Repeat this structure with different data/colors -->
+
+                <!-- Card 1 -->
+                <div class="col-12 col-sm-6 col-lg-3 mb-4">
+                  <div class="p-3 rounded"
+                    style="background: linear-gradient(135deg, #ff416c, #ff4b2b); position: relative; transition: 0.3s; cursor: pointer; height: 130px;"
+                    onmouseover="this.style.transform='scale(1.04)'; this.style.boxShadow='0 8px 16px rgba(0,0,0,0.3)'"
+                    onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'">
+                    <div style="font-size: 1rem; font-weight: 600; color: #fff;">Total Members</div>
+                    <div style="font-size: 1.6rem; font-weight: bold; color: #fff;">661</div>
+                    <i class="mdi mdi-account-multiple"
+                      style="position: absolute; top: 0.8rem; right: 0.8rem; font-size: 1.4rem; color: #fff;"></i>
+                  </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="col-12 col-sm-6 col-lg-3 mb-4">
+                  <div class="p-3 rounded"
+                    style="background: linear-gradient(135deg, #1f4037, #99f2c8); position: relative; transition: 0.3s; cursor: pointer; height: 130px;"
+                    onmouseover="this.style.transform='scale(1.04)'; this.style.boxShadow='0 8px 16px rgba(0,0,0,0.3)'"
+                    onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'">
+                    <div style="font-size: 1rem; font-weight: 600; color: #fff;">Membership Types</div>
+                    <div style="font-size: 1.6rem; font-weight: bold; color: #fff;">13</div>
+                    <i class="mdi mdi-format-list-bulleted-type"
+                      style="position: absolute; top: 0.8rem; right: 0.8rem; font-size: 1.4rem; color: #fff;"></i>
+                  </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="col-12 col-sm-6 col-lg-3 mb-4">
+                  <div class="p-3 rounded"
+                    style="background: linear-gradient(135deg, #f7971e, #ffd200); position: relative; transition: 0.3s; cursor: pointer; height: 130px;"
+                    onmouseover="this.style.transform='scale(1.04)'; this.style.boxShadow='0 8px 16px rgba(0,0,0,0.3)'"
+                    onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'">
+                    <div style="font-size: 1rem; font-weight: 600; color: #fff;">Expiring Soon</div>
+                    <div style="font-size: 1.6rem; font-weight: bold; color: #fff;">84</div>
+                    <i class="mdi mdi-timer-sand"
+                      style="position: absolute; top: 0.8rem; right: 0.8rem; font-size: 1.4rem; color: #fff;"></i>
+                  </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="col-12 col-sm-6 col-lg-3 mb-4">
+                  <div class="p-3 rounded"
+                    style="background: linear-gradient(135deg, #283c86, #45a247); position: relative; transition: 0.3s; cursor: pointer; height: 130px;"
+                    onmouseover="this.style.transform='scale(1.04)'; this.style.boxShadow='0 8px 16px rgba(0,0,0,0.3)'"
+                    onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'">
+                    <div style="font-size: 1rem; font-weight: 600; color: #fff;">Total Revenue</div>
+                    <div style="font-size: 1.6rem; font-weight: bold; color: #fff;">₹1,152,598</div>
+                    <i class="mdi mdi-currency-inr"
+                      style="position: absolute; top: 0.8rem; right: 0.8rem; font-size: 1.4rem; color: #fff;"></i>
+                  </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="col-12 col-sm-6 col-lg-3 mb-4">
+                  <div class="p-3 rounded"
+                    style="background: linear-gradient(135deg, #00c9ff, #92fe9d); position: relative; transition: 0.3s; cursor: pointer; height: 130px;"
+                    onmouseover="this.style.transform='scale(1.04)'; this.style.boxShadow='0 8px 16px rgba(0,0,0,0.3)'"
+                    onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'">
+                    <div style="font-size: 1rem; font-weight: 600; color: #fff;">New Members</div>
+                    <div style="font-size: 1.6rem; font-weight: bold; color: #fff;">3</div>
+                    <i class="mdi mdi-account-plus"
+                      style="position: absolute; top: 0.8rem; right: 0.8rem; font-size: 1.4rem; color: #fff;"></i>
+                  </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="col-12 col-sm-6 col-lg-3 mb-4">
+                  <div class="p-3 rounded"
+                    style="background: linear-gradient(135deg, #b24592, #f15f79); position: relative; transition: 0.3s; cursor: pointer; height: 130px;"
+                    onmouseover="this.style.transform='scale(1.04)'; this.style.boxShadow='0 8px 16px rgba(0,0,0,0.3)'"
+                    onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'">
+                    <div style="font-size: 1rem; font-weight: 600; color: #fff;">Expired Membership</div>
+                    <div style="font-size: 1.6rem; font-weight: bold; color: #fff;">367</div>
+                    <i class="mdi mdi-close"
+                      style="position: absolute; top: 0.8rem; right: 0.8rem; font-size: 1.4rem; color: #fff;"></i>
+                  </div>
+                </div>
+
+                <!-- Card 7 -->
+                <div class="col-12 col-sm-6 col-lg-3 mb-4">
+                  <div class="p-3 rounded"
+                    style="background: linear-gradient(135deg, #232526, #414345); position: relative; transition: 0.3s; cursor: pointer; height: 130px;"
+                    onmouseover="this.style.transform='scale(1.04)'; this.style.boxShadow='0 8px 16px rgba(0,0,0,0.3)'"
+                    onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'">
+                    <div style="font-size: 1rem; font-weight: 600; color: #fff;">Active Trainers</div>
+                    <div style="font-size: 1.6rem; font-weight: bold; color: #fff;">12</div>
+                    <i class="mdi mdi-account-tie"
+                      style="position: absolute; top: 0.8rem; right: 0.8rem; font-size: 1.4rem; color: #fff;"></i>
+                  </div>
+                </div>
+
+                <!-- Card 8 -->
+                <div class="col-12 col-sm-6 col-lg-3 mb-4">
+                  <div class="p-3 rounded"
+                    style="background: linear-gradient(135deg, #2c3e50, #4ca1af); position: relative; transition: 0.3s; cursor: pointer; height: 130px;"
+                    onmouseover="this.style.transform='scale(1.04)'; this.style.boxShadow='0 8px 16px rgba(0,0,0,0.3)'"
+                    onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'">
+                    <div style="font-size: 1rem; font-weight: 600; color: #fff;">Total Equipments</div>
+                    <div style="font-size: 1.6rem; font-weight: bold; color: #fff;">54</div>
+                    <i class="mdi mdi-dumbbell"
+                      style="position: absolute; top: 0.8rem; right: 0.8rem; font-size: 1.4rem; color: #fff;"></i>
+                  </div>
+                </div>
+
+              </div>
+
+
+              
+            <div class="row">
+              <div class="col-12 grid-margin">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Recently Joined Members</h4>
+                    <ul class="list-group">
+                      <!-- Member 1 -->
+                      <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <div class="d-flex align-items-center">
+                          <img src="assets/images/faces/face1.jpg" class="rounded-circle me-3" width="50" height="50"
+                            alt="image">
+                          <div>
+                            <a href="#" class="fw-bold text-primary mb-0">Prajwal Bhoyar</a><br>
+                            <small class="text-muted">Membership Number: CA-364753</small>
+                          </div>
+                        </div>
+                        <span class="badge bg-dark">1 Month Plan</span>
+                      </li>
+
+                      <!-- Member 2 -->
+                      <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <div class="d-flex align-items-center">
+                          <img src="assets/images/faces/face2.jpg" class="rounded-circle me-3" width="50" height="50"
+                            alt="image">
+                          <div>
+                            <a href="#" class="fw-bold text-primary mb-0">Sarthak Sawarkar</a><br>
+                            <small class="text-muted">Membership Number: CA-454136</small>
+                          </div>
+                        </div>
+                        <span class="badge bg-dark">1 Month Plan</span>
+                      </li>
+
+                      <!-- Member 3 -->
+                      <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <div class="d-flex align-items-center">
+                          <img src="assets/images/faces/face3.jpg" class="rounded-circle me-3" width="50" height="50"
+                            alt="image">
+                          <div>
+                            <a href="#" class="fw-bold text-primary mb-0">Daksh Kohade</a><br>
+                            <small class="text-muted">Membership Number: CA-035181</small>
+                          </div>
+                        </div>
+                        <span class="badge bg-dark">3 Month Plan</span>
+                      </li>
+
+                      <!-- Member 4 -->
+                      <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <div class="d-flex align-items-center">
+                          <img src="assets/images/faces/face4.jpg" class="rounded-circle me-3" width="50" height="50"
+                            alt="image">
+                          <div>
+                            <a href="#" class="fw-bold text-primary mb-0">Himanshu Samardh</a><br>
+                            <small class="text-muted">Membership Number: CA-751173</small>
+                          </div>
+                        </div>
+                        <span class="badge bg-dark">1 Month Plan (New Adm Gym)</span>
+                      </li>
+                    </ul>
+                    <div class="mt-3 text-center">
+                      <a href="#" class="text-primary fw-bold">View All Members</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- content-wrapper ends -->
+          <!-- partial:partials/_footer.html -->
+          <footer class="footer">
+            <div class="d-sm-flex justify-content-center justify-content-sm-between">
+              <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">&copy; 2025 Olympus Gym -
+                All
+                rights reserved.</span>
+              <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Software Developed & Managed By
+                <a href="https://kavyainfoweb.com/" target="_blank">Kavya Infoweb Pvt. Ltd.</a></span>
+            </div>
+          </footer>
+          <!-- partial -->
+        </div>
+        <!-- main-panel ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+    <script src="assets/vendors/js/vendor.bundle.base.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page -->
+    <script src="assets/vendors/chart.js/chart.umd.js"></script>
+    <script src="assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <script src="assets/js/off-canvas.js"></script>
+    <script src="assets/js/misc.js"></script>
+    <script src="assets/js/settings.js"></script>
+    <script src="assets/js/todolist.js"></script>
+    <script src="assets/js/jquery.cookie.js"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page -->
+    <script src="assets/js/dashboard.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+    <script>
+      const revenueCtx = document.getElementById('revenueChart').getContext('2d');
+      const trafficCtx = document.getElementById('trafficChart').getContext('2d');
+
+      const revenueData = {
+        monthly: {
+          labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+          data: [12000, 15000, 18000, 20000, 17000, 21000]
+        },
+        weekly: {
+          labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+          data: [1800, 2200, 2000, 2400, 2100, 2500, 2700]
+        },
+        yearly: {
+          labels: ['2020', '2021', '2022', '2023', '2024'],
+          data: [120000, 135000, 150000, 175000, 200000]
+        }
+      };
+
+      let revenueChart = new Chart(revenueCtx, {
+        type: 'line',
+        data: {
+          labels: revenueData.monthly.labels,
+          datasets: [{
+            label: 'Revenue (INR)',
+            data: revenueData.monthly.data,
+            borderColor: '#7e57c2',
+            backgroundColor: 'rgba(126, 87, 194, 0.1)',
+            fill: true,
+            tension: 0.4,
+            pointBackgroundColor: '#7e57c2',
+            borderWidth: 2
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: false }
+          }
+        }
+      });
+
+      function updateChart(type) {
+        document.getElementById('selectedPeriod').textContent = type.charAt(0).toUpperCase() + type.slice(1);
+        revenueChart.data.labels = revenueData[type].labels;
+        revenueChart.data.datasets[0].data = revenueData[type].data;
+        revenueChart.update();
+      }
+
+      new Chart(trafficCtx, {
+        type: 'doughnut',
+        data: {
+          labels: ['Instagram', 'Walk-ins', 'Facebook', 'Google Ads'],
+          datasets: [{
+            data: [45, 25, 20, 10],
+            backgroundColor: ['#ff6f61', '#88b04b', '#6b5b95', '#f7cac9'],
+            hoverOffset: 10
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              position: 'bottom',
+              labels: {
+                boxWidth: 15
+              }
+            }
+          }
+        }
+      });
+    </script>
+
+
+</body>
+
+</html>
